@@ -40,6 +40,7 @@ export default class IRouter extends React.Component {
 					<Route path="/" render={() =>
 						<Admin>
 							<Switch>
+								<Route exact path="/" component={Home} />
 								<Route path="/home" component={Home} />
 								<Route path="/ui/buttons" component={Buttons} />
 								<Route path="/ui/modals" component={Modals} />

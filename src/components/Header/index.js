@@ -45,10 +45,10 @@ class Header extends React.Component {
 					</Col>
 				</Row>
 				<Row className="breadcrumb">
-					<Col span={4} className="breadcrumb-title">
+					<Col span={16} className="breadcrumb-title">
 						{ this.props.menuName }
 					</Col>
-					<Col span={20} className="weather">
+					<Col span={8} className="weather">
 						<span className="date">{ this.state.sysTime }</span>
 						<span className="weather-detail">{this.state.wea}</span>
 					</Col>

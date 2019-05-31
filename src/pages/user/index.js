@@ -18,6 +18,7 @@ export default class User extends React.Component{
     }
 
     requestList = ()=>{
+        let _this = this;
         axios.ajax({
             url:'/table/list',
             data:{
@@ -26,12 +27,12 @@ export default class User extends React.Component{
                 }
             }
         }).then((res)=>{
-            let _this = this;
+            let list = res.result.list.map((item, index)=>{
+                item.key = index
+                return item;
+            })
             this.setState({
-                list:res.result.list.map((item,index)=>{
-                    item.key=index
-                    return item;
-                }),
+                list,
                 pagination:Utils.pagination(res,(current)=>{
                     _this.params.page = current;
                     _this.requestList();
